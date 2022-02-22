@@ -10,9 +10,9 @@ public class AddCharService {
 	public String addChar(CharAddingDTO entity) {
 		
 		if (entity.getPosition().equals("left")) {
-			return StringUtils.leftPad(entity.getText(), entity.getSize(), entity.getNewChar());
+			return StringUtils.leftPad(entity.getText(), entity.getSize() + entity.getText().length(), entity.getNewChar());
 		} else {
-			return StringUtils.rightPad(entity.getText(), entity.getSize(), entity.getNewChar());
+			return StringUtils.rightPad(entity.getText(), entity.getSize() + entity.getText().length(), entity.getNewChar());
 			
 		}
 	}
